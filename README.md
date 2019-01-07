@@ -1,4 +1,4 @@
-# chatroom（Flask-Sockets + Vue + OAuth）
+# ChatRoom_Frontend（Flask-Sockets + Vue + OAuth）
 ### 前后端的消息传递
 * 父组件中初始化 `websocket`，并建立连接
 > 注意：
