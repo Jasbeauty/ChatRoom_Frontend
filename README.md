@@ -1,7 +1,5 @@
-# chatroom
-
-## Steps（Flask-Sockets + Vue）
-#### 前后端的消息传递
+# chatroom（Flask-Sockets + Vue + OAuth）
+### 前后端的消息传递
 * 父组件中初始化 `websocket`，并建立连接
 > 注意：
 >   * `created()` 和 `destroyed()` 属于生命周期，不能写在 `methods(){...}` 中
@@ -41,16 +39,16 @@ this.websocketsend(this.newMsg);
 this.msgs.push(redata);
 ```
 
-#### 添加弹幕
+### 添加弹幕
 使用 [`VUE2-barrage`](https://github.com/FoxDaxian/barrage/blob/master/src/App.vue) 插件
-#### 消息存入数据库
+### 消息存入数据库
 
-## Github 第三方登录
+### Github 第三方登录
 采用授权码模式
 1. 通过 `client_id` 请求授权服务端，获取 `Authorization Code`
 2. 在重定向的过程中（注册时给定的 URI），通过 `Authorization Code`、`client_id`、`client_secret` 请求授权服务端，验证完 `Authorization Code` 是否失效以及接入的客户端信息是否有效（通过传递的 `client_id` 和`client_secret` 信息和服务端已经保存的客户端信息进行匹配）之后，授权服务端生成 `Access Token` 和`Refresh Token`， 并返回给客户端
 3. 客户端通过得到的 `Access Token` 请求资源服务应用，获取需要的并在所申请 `Access Token` 权限范围内的资源信息
 
-#### 解决跨域问题
+##### 解决跨域问题
 根目录下新建 `vue.config.js`
 > 注意：`pathRewrite` 一定要写 
